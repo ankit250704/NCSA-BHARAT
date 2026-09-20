@@ -1,0 +1,252 @@
+.vlab__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.vlab__left {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Features list */
+.vlab__features {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.vlab__feature {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 16px;
+  border-radius: 12px;
+  transition: var(--transition);
+}
+
+.vlab__feature:hover {
+  background: var(--bg-glass);
+}
+
+.vlab__feature-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 245, 255, 0.08);
+  border-radius: 10px;
+}
+
+.vlab__feature-title {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.vlab__feature-desc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Screen */
+.vlab__screen {
+  background: rgba(10, 16, 32, 0.98);
+  border: 1px solid rgba(0, 245, 255, 0.3);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 60px rgba(0, 245, 255, 0.12), 0 32px 80px rgba(0,0,0,0.7);
+  animation: borderPulse 4s ease-in-out infinite;
+}
+
+.vlab__screen-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  background: rgba(0,0,0,0.5);
+  border-bottom: 1px solid rgba(0, 245, 255, 0.1);
+}
+
+.vlab__screen-dots { display: flex; gap: 6px; }
+
+.vlab__screen-tabs {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+}
+
+.vlab__tab {
+  padding: 4px 12px;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: var(--transition);
+}
+
+.vlab__tab.active {
+  background: rgba(0, 245, 255, 0.1);
+  border-color: rgba(0, 245, 255, 0.2);
+  color: var(--cyan);
+}
+
+.vlab__screen-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  color: var(--green-neon);
+}
+
+.vlab__status-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--green-neon);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--green-neon);
+  animation: pulse-dot 1.5s infinite;
+}
+
+.vlab__screen-body {
+  display: flex;
+  height: 300px;
+}
+
+/* Sidebar */
+.vlab__screen-sidebar {
+  width: 180px;
+  flex-shrink: 0;
+  padding: 16px;
+  background: rgba(0,0,0,0.3);
+  border-right: 1px solid rgba(0, 245, 255, 0.1);
+}
+
+.vlab__sidebar-title {
+  font-family: var(--font-ui);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.vlab__progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  font-family: var(--font-ui);
+  margin-bottom: 4px;
+}
+
+.vlab__progress-bar {
+  height: 4px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  margin-bottom: 14px;
+}
+
+.vlab__progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--cyan), #a78bfa);
+  border-radius: 4px;
+}
+
+.vlab__sidebar-tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.vlab__task {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.68rem;
+  font-family: var(--font-ui);
+  color: var(--text-muted);
+  padding: 4px 6px;
+  border-radius: 6px;
+}
+
+.vlab__task.done { color: var(--green-neon); }
+.vlab__task.active {
+  color: var(--cyan);
+  background: rgba(0, 245, 255, 0.08);
+}
+
+.vlab__task-check {
+  width: 14px;
+  flex-shrink: 0;
+  font-size: 0.65rem;
+}
+
+/* Terminal panel */
+.vlab__terminal {
+  flex: 1;
+  padding: 16px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  line-height: 1.7;
+  overflow: hidden;
+}
+
+.vlab__term-line {
+  display: flex;
+  gap: 4px;
+}
+
+.vlab__term-out {
+  padding-left: 4px;
+}
+
+/* Tools */
+.vlab__tools {
+  padding: 20px;
+  border-top: 1px solid rgba(0, 245, 255, 0.1);
+}
+
+.vlab__tools-label {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+
+.vlab__tools-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.vlab__tool-badge {
+  padding: 4px 10px;
+  background: rgba(0, 245, 255, 0.06);
+  border: 1px solid rgba(0, 245, 255, 0.15);
+  border-radius: 6px;
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  color: var(--cyan);
+  transition: var(--transition);
+}
+
+.vlab__tool-badge:hover {
+  background: rgba(0, 245, 255, 0.15);
+}
+
+@media (max-width: 1024px) {
+  .vlab__inner { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,109 @@
+.home-portal {
+  position: relative;
+  overflow: hidden;
+  padding: 80px 0 120px;
+}
+
+.home-portal__header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.home-portal__header .section-subtitle {
+  margin: 0 auto;
+}
+
+.home-portal__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 28px;
+}
+
+.home-portal__card {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
+}
+
+.home-portal__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--card-color, var(--cyan));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.home-portal__card:hover {
+  transform: translateY(-6px);
+  border-color: var(--card-color, var(--cyan));
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 245, 255, 0.15);
+}
+
+.home-portal__card:hover::before {
+  opacity: 1;
+}
+
+.home-portal__card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.home-portal__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-portal__tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid;
+  letter-spacing: 0.04em;
+  font-family: var(--font-ui);
+}
+
+.home-portal__title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+
+.home-portal__desc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.home-portal__action {
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-ui);
+  transition: gap 0.2s ease;
+}
+
+.home-portal__card:hover .home-portal__action {
+  gap: 12px;
+}

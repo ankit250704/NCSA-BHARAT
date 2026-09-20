@@ -1,0 +1,126 @@
+.courses-page {
+  min-height: 100vh;
+  padding-top: 100px;
+  position: relative;
+  background: var(--bg-dark);
+}
+
+.courses-page__hero {
+  padding: 60px 0 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.courses-page__search-bar {
+  max-width: 700px;
+  margin: 32px auto 0;
+  display: flex;
+  gap: 12px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid var(--border-glass);
+  border-radius: 12px;
+  padding: 8px 12px;
+  box-shadow: 0 0 20px var(--cyan-glow);
+}
+
+.courses-page__search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1rem;
+  padding: 10px 14px;
+  outline: none;
+  font-family: var(--font-body);
+}
+
+.courses-page__search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.courses-page__controls {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.courses-page__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.courses-page__filter-select {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid var(--border-glass);
+  color: var(--text-primary);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.courses-page__filter-select:focus {
+  border-color: var(--cyan);
+}
+
+.courses-page__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+  margin: 40px 0 80px;
+}
+
+.course-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 7, 18, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.course-modal {
+  background: #0b1329;
+  border: 1px solid var(--border-glass-hover);
+  border-radius: 20px;
+  max-width: 650px;
+  width: 100%;
+  padding: 32px;
+  position: relative;
+  box-shadow: 0 0 50px var(--cyan-glow-strong);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.course-modal__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: var(--text-primary);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.course-modal__close:hover {
+  background: var(--red-alert);
+  color: #fff;
+}
