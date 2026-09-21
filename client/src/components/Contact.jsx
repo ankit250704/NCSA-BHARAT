@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import api from '../api';
 import './Contact.css';
 
 const Contact = () => {
@@ -13,7 +13,7 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      await axios.post('http://localhost:5000/api/contact', form);
+      await api.post('/api/contact', form);
       setStatus({ type: 'success', msg: "✅ Message sent! We'll be in touch within 24 hours." });
       setForm({ name: '', email: '', phone: '', subject: '', message: '' });
     } catch {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import api from '../api';
 import './Courses.css';
 
 const staticCourses = [
@@ -104,7 +104,7 @@ const Courses = () => {
   const [filtered, setFiltered] = useState(staticCourses);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/courses')
+    api.get('/api/courses')
       .then(res => { if (res.data.length) { setCourses(res.data); setFiltered(res.data); } })
       .catch(() => {});
   }, []);

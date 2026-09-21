@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import api from '../api';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../components/Courses.css';
@@ -149,7 +149,7 @@ const CoursesPage = () => {
   const [enrolledMsg, setEnrolledMsg] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/courses')
+    api.get('/api/courses')
       .then(res => { if (res.data && res.data.length) setCourses(res.data); })
       .catch(() => {});
   }, []);
